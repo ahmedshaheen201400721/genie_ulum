@@ -9,8 +9,8 @@ lead_form_crm_patch = {
     "module": "crm",
     "inheritance_operations": [
         {
-            "operation": "after",
-            "target": "field[name=phone]",
+            "operation": "before",
+            "target": "field[name=partner]",
             "content": {
                     "name": "courses",
                     "string": "Courses",
