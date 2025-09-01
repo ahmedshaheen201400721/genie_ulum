@@ -8,6 +8,20 @@ class Course(BaseModel):
     name = models.CharField(max_length=250)
     description = models.TextField(null=True,blank=True)
     instructor = models.ForeignKey(Partner, on_delete=models.CASCADE,null=True,blank=True)
+    def __str__(self):
+        return self.name
+
+
+class AgeGroup(BaseModel):
+    name = models.CharField(max_length=250)
+    description = models.TextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.name
+
+class LastAction(BaseModel):
+    name = models.CharField(max_length=250)
+    description = models.TextField(null=True,blank=True)
     
     def __str__(self):
         return self.name

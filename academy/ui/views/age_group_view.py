@@ -2,12 +2,12 @@
 # UI Views for academy module
 from django.utils.translation import gettext as _
 
-academy_course_list_view = {
-    "key": "academy_course_list_view",
-    "name": "Academy Course List View",
-    "model": "academy.course",
+academy_age_group_list_view = {
+    "key": "academy_age_group_list_view",
+    "name": "Academy Age Group List View",
+    "model": "academy.agegroup",
     "view_type": "list",
-    "menu_item": "academy_main_menu_courses",
+    "menu_item": "academy_main_menu_age_groups",
     "priority": 20,
     'module': 'crm',
     "body": {
@@ -24,32 +24,24 @@ academy_course_list_view = {
                     "name": "name", 
                     "widget": "text",
                     "string": _("Name"),
-                    "help": "Course name",
+                    "help": " name",
                 },
                 {
                     "name": "description", 
                     "widget": "text",
                     "string": _("Description"),
-                    "help": "Course description",
+                    "help": "description",
                 },
-                {
-                    "name": "instructor",
-                    "string": _("Instructor"),
-                    "help": "Instructor",
-                    "widget": "relation",
-                    "displayField": "name",
-                },
-               
             ]
         }
     }
 }
 
-academy_course_form_view = {
-    "key": "academy_course_form_view",
-    "name": "Academy Course Form View",
-    "model": "academy.course",
-    "menu_item": "academy_main_menu_courses",
+academy_age_group_form_view = {
+    "key": "academy_age_group_form_view",
+    "name": "Academy Age Group Form View",
+    "model": "academy.agegroup",
+    "menu_item": "academy_main_menu_age_groups",
     "view_type": "form",
     "priority": 10,
     "module": "crm",
@@ -57,33 +49,19 @@ academy_course_form_view = {
         "sheet": {
             "groups": [
                 {
-                    "title": "Course Information",
+                    "title": "Age Group Information",
                     "groups": [
                         {
-                            "title": "General Information",
+                            "title": "",
                             "fields": [
                                 {
-                                    "name": "instructor",
-                                    "string": _("Instructor"),
-                                    "widget": "relation",
-                                    "required": False,
-                                    "readonly": False,
-                                    "help": _("Instructor"),
-                                    "placeholder": "Search...",
-                                    "domain": "",
-                                    "context": {},
-                                    "multiSelect": False,
-                                    "creatable": False
-                                },
-                                {
                                     "name": "name",
-                                    "string": _("Course Name"),
+                                    "string": _("Age Group Name"),
                                     "widget": "text",
                                     "required": True,
                                     "readonly": False,
-                                    "help": _("Course name"),
+                                    "help": _("Age Group name"),
                                     "placeholder": "",
-                                    "domain": "",
                                     "minLength": None,
                                     "maxLength": 250,
                                     "pattern": None,
@@ -94,19 +72,16 @@ academy_course_form_view = {
                     
                         },
                         {
-                            "title": "General Information",
+                            "title": "",
                             "fields": [
                                  {
                                     "name": "description",
-                                    "string": _("Description"),
+                                    "string": _("Age Group Description"),
                                     "widget": "textarea",
                                     "required": False,
                                     "readonly": False,
-                                    "help": _("Course description"),
+                                    "help": _("Age Group description"),
                                     "placeholder": "",
-                                    "domain": "",
-                                    "presets": "medium",
-                                    "showColorName": True
                                 },
                                 
                             ],
